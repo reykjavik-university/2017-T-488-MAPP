@@ -1,2 +1,2 @@
 # 2017-T-488-MAPP
-The repository for the App programming course at RU in fall 2017
+The repo for the App Development course at RU in fall 2017
