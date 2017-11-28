@@ -7,7 +7,7 @@ namespace HelloWorld.iOS
 {
     public class NameListController : UITableViewController
     {
-        private List<string> _nameList;
+        private readonly List<string> _nameList;
 
         public NameListController(List<string> nameList)
         {
@@ -18,6 +18,8 @@ namespace HelloWorld.iOS
         {
             base.ViewDidLoad();
             this.Title = "Name list";
+
+            this.TableView.Source = new NameListDataSource(this._nameList);
         }
     }
 }
