@@ -24,40 +24,69 @@ namespace HelloWorld.iOS
 
             this.View.BackgroundColor = UIColor.White;
 
-            var promptLabel = new UILabel()
+            var promptLabel = PromptLabel();
+            var nameField = UiTextField();
+            var greetingLabel = GreetingLabel();
+            var greetingButton = GreetingButton(greetingLabel, nameField);
+            var navigateButton = NavigationButton(nameField);
+            this.View.AddSubviews(new UIView[] {promptLabel, nameField, greetingLabel, greetingButton, navigateButton});
+        }
+
+        private UIButton NavigationButton(UITextField nameField)
+        {
+            var navigateButton = UIButton.FromType(UIButtonType.RoundedRect);
+            navigateButton.Frame = new CGRect(StartX, StartY + 4 * Height, this.View.Bounds.Width - 2 * StartX, Height);
+            navigateButton.SetTitle("See name list", UIControlState.Normal);
+
+            navigateButton.TouchUpInside += (sender, args) =>
             {
-                Frame = new CGRect(StartX, StartY, this.View.Bounds.Width-2*StartX, Height),
-                Text = "Enter your name: "
+                nameField.ResignFirstResponder();
+                this.NavigationController.PushViewController(new NameListController(this._nameList), true);
             };
+            return navigateButton;
+        }
 
-            this.View.AddSubview(promptLabel);
-
-            var nameField = new UITextField()
-            {
-                Frame = new CGRect(StartX, StartY+Height, this.View.Bounds.Width-2*StartX, Height),
-                BorderStyle = UITextBorderStyle.RoundedRect
-            };
-
-            this.View.AddSubview(nameField);
-
-            var greetingButton = UIButton.FromType(UIButtonType.RoundedRect);
-            greetingButton.Frame = new CGRect(StartX, StartY+2*Height, this.View.Bounds.Width-2*StartX, Height);
-            greetingButton.SetTitle("Greet me", UIControlState.Normal);
-
-            this.View.AddSubview(greetingButton);
-
+        private UILabel GreetingLabel()
+        {
             var greetingLabel = new UILabel()
             {
-                Frame = new CGRect(StartX, StartY+3*Height, this.View.Bounds.Width-2*StartX, Height),
+                Frame = new CGRect(StartX, StartY + 3 * Height, this.View.Bounds.Width - 2 * StartX, Height),
                 Text = "Hello"
             };
-            this.View.AddSubview(greetingLabel);
+            return greetingLabel;
+        }
 
+        private UIButton GreetingButton(UILabel greetingLabel, UITextField nameField)
+        {
+            var greetingButton = UIButton.FromType(UIButtonType.RoundedRect);
+            greetingButton.Frame = new CGRect(StartX, StartY + 2 * Height, this.View.Bounds.Width - 2 * StartX, Height);
+            greetingButton.SetTitle("Greet me", UIControlState.Normal);
             greetingButton.TouchUpInside += (sender, args) =>
             {
                 nameField.ResignFirstResponder();
                 greetingLabel.Text = "Hello " + nameField.Text;
             };
+            return greetingButton;
+        }
+
+        private UITextField UiTextField()
+        {
+            var nameField = new UITextField()
+            {
+                Frame = new CGRect(StartX, StartY + Height, this.View.Bounds.Width - 2 * StartX, Height),
+                BorderStyle = UITextBorderStyle.RoundedRect
+            };
+            return nameField;
+        }
+
+        private UILabel PromptLabel()
+        {
+            var promptLabel = new UILabel()
+            {
+                Frame = new CGRect(StartX, StartY, this.View.Bounds.Width - 2 * StartX, Height),
+                Text = "Enter your name: "
+            };
+            return promptLabel;
         }
     }
 }
