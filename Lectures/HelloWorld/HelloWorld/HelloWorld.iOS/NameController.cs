@@ -1,14 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
 using CoreGraphics;
 using UIKit;
 
 namespace HelloWorld.iOS
 {
-    public class HelloWorldViewController : UIViewController
+    public class NameController : UIViewController
     {
         private const double StartX = 20;
         private const double StartY = 80;
         private const double Height = 50;
+
+        private List<string> _nameList;
+
+        public NameController(List<string> nameList)
+        {
+            this._nameList = nameList;
+        }
 
         public override void ViewDidLoad()
         {

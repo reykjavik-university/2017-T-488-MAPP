@@ -1,5 +1,6 @@
 ﻿using Foundation;
 using UIKit;
+using HelloWorld;
 
 namespace HelloWorld.iOS
 {
@@ -20,7 +21,8 @@ namespace HelloWorld.iOS
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
             this.Window = new UIWindow(UIScreen.MainScreen.Bounds);
-            var controller = new HelloWorldViewController();
+		    var people = new People();
+            var controller = new NameController(people.Persons);
 		    this.Window.RootViewController = new UINavigationController(controller);
             this.Window.MakeKeyAndVisible();
             return true;
