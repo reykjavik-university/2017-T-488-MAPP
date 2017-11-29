@@ -28,9 +28,7 @@ namespace HelloWorld.iOS.Controllers
                 cell = new PersonCell(this.NameListCellId);
             }
 
-            var person = this._personList[indexPath.Row];
-            cell.UpdateCell(person.Name, person.BirthYear.ToString(), person.ImageName);
-            
+            cell.UpdateCell(this._personList[indexPath.Row]);            
             return cell;
         }
 

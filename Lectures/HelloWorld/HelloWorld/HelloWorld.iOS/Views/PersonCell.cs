@@ -10,9 +10,9 @@ namespace HelloWorld.iOS.Views
     public class PersonCell : UITableViewCell
     {
         private const double ImageHeight = 33;
-        private UIImageView _imageView;
-        private UILabel _headingLabel;
-        private UILabel _subheadingLabel;
+        private readonly UIImageView _imageView;
+        private readonly UILabel _headingLabel;
+        private readonly UILabel _subheadingLabel;
 
         public PersonCell(NSString cellId) : base(UITableViewCellStyle.Default, cellId)
         {
@@ -45,11 +45,11 @@ namespace HelloWorld.iOS.Views
             this.Accessory = UITableViewCellAccessory.DisclosureIndicator;
         }
 
-        public void UpdateCell(string name, string year, string imageName)
+        public void UpdateCell(Person person)
         {
-            this._imageView.Image = UIImage.FromFile(imageName);
-            this._headingLabel.Text = name;
-            this._subheadingLabel.Text = year;
+            this._imageView.Image = UIImage.FromFile(person.ImageName);
+            this._headingLabel.Text = person.Name;
+            this._subheadingLabel.Text = person.BirthYear.ToString();
         }
     }
 }
