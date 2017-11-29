@@ -12,10 +12,12 @@ namespace HelloWorld.iOS.Controllers
         private readonly List<Person> _personList;
 
         public readonly NSString NameListCellId = new NSString("NameListCell");
+        private readonly Action<int> _onSelectedPerson;
 
-        public NameListDataSource(List<Person> personList)
+        public NameListDataSource(List<Person> personList, Action<int> onSelectedPerson)
         {
             this._personList = personList;
+            this._onSelectedPerson = onSelectedPerson;
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -35,6 +37,12 @@ namespace HelloWorld.iOS.Controllers
         public override nint RowsInSection(UITableView tableview, nint section)
         {
             return this._personList.Count;
+        }
+
+        public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+        {
+            tableView.DeselectRow(indexPath, true);
+            this._onSelectedPerson(indexPath.Row);
         }
     }
 }

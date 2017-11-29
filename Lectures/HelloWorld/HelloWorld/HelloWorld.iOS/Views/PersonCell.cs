@@ -41,6 +41,8 @@ namespace HelloWorld.iOS.Views
             };
 
             this.ContentView.AddSubviews(new UIView[] { this._imageView, this._headingLabel, this._subheadingLabel});
+
+            this.Accessory = UITableViewCellAccessory.DisclosureIndicator;
         }
 
         public void UpdateCell(string name, string year, string imageName)
