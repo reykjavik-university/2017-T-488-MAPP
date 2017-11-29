@@ -39,6 +39,8 @@ namespace HelloWorld.iOS.Views
                 TextAlignment = UITextAlignment.Center,
                 BackgroundColor = UIColor.Clear
             };
+
+            this.ContentView.AddSubviews(new UIView[] { this._imageView, this._headingLabel, this._subheadingLabel});
         }
 
         public void UpdateCell(string name, string year, string imageName)
