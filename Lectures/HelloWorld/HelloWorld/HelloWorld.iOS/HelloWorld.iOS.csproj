@@ -127,17 +127,62 @@
     <None Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NameController.cs" />
+    <Compile Include="Controllers\NameController.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="NameListController.cs" />
-    <Compile Include="NameListDataSource.cs" />
+    <Compile Include="Controllers\NameListController.cs" />
+    <Compile Include="Controllers\NameListDataSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\abraham_lincoln.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bill_gates.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\charles_darwin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\charles_de_gaulle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\christopher_columbus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\george_orwell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\john_kennedy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mahatma_gandhi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\margaret_thatcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\marilyn_monroe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\martin_luther_king.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mother_teresa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\muhammad_ali.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\nelson_mandela.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\winston_churchill.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

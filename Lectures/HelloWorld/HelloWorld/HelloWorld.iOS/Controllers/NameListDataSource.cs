@@ -4,17 +4,17 @@ using System.Text;
 using Foundation;
 using UIKit;
 
-namespace HelloWorld.iOS
+namespace HelloWorld.iOS.Controllers
 {
     public class NameListDataSource : UITableViewSource
     {
-        private readonly List<string> _nameList;
+        private readonly List<Person> _personList;
 
         public readonly NSString NameListCellId = new NSString("NameListCell");
 
-        public NameListDataSource(List<string> nameList)
+        public NameListDataSource(List<Person> personList)
         {
-            this._nameList = nameList;
+            this._personList = personList;
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -24,13 +24,13 @@ namespace HelloWorld.iOS
             {
                 cell = new UITableViewCell(UITableViewCellStyle.Default, this.NameListCellId);
             }
-            cell.TextLabel.Text = this._nameList[indexPath.Row];
+            cell.TextLabel.Text = this._personList[indexPath.Row];
             return cell;
         }
 
         public override nint RowsInSection(UITableView tableview, nint section)
         {
-            return this._nameList.Count;
+            return this._personList.Count;
         }
     }
 }

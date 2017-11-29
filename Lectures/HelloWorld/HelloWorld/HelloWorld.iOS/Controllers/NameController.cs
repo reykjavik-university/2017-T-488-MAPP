@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using CoreGraphics;
 using UIKit;
 
-namespace HelloWorld.iOS
+namespace HelloWorld.iOS.Controllers
 {
     public class NameController : UIViewController
     {
@@ -11,11 +11,11 @@ namespace HelloWorld.iOS
         private const double StartY = 80;
         private const double Height = 50;
 
-        private List<string> _nameList;
+        private List<Person> _personList;
 
-        public NameController(List<string> nameList)
+        public NameController(List<Person> personList)
         {
-            this._nameList = nameList;
+            this._personList = personList;
         }
 
         public override void ViewDidLoad()
@@ -41,7 +41,7 @@ namespace HelloWorld.iOS
             navigateButton.TouchUpInside += (sender, args) =>
             {
                 nameField.ResignFirstResponder();
-                this.NavigationController.PushViewController(new NameListController(this._nameList), true);
+                this.NavigationController.PushViewController(new NameListController(this._personList), true);
             };
             return navigateButton;
         }

@@ -1,6 +1,7 @@
 ﻿using Foundation;
 using UIKit;
 using HelloWorld;
+using HelloWorld.iOS.Controllers;
 
 namespace HelloWorld.iOS
 {
