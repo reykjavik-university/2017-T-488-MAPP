@@ -23,6 +23,7 @@ namespace HelloWorld.iOS.Controllers
             base.ViewDidLoad();
 
             this.View.BackgroundColor = UIColor.White;
+            this.Title = "Greeting";
 
             var promptLabel = PromptLabel();
             var nameField = UiTextField();
