@@ -49,19 +49,5 @@ namespace MovieDownload
                 Console.WriteLine(ex.ToString());
             }
         }
-
-        public async Task DownloadImagesInList(List<MovieDisplayInfo> movieDisplayInfoList)
-        {
-            foreach (var mInfo in movieDisplayInfoList)
-            {
-				var posterPath = mInfo.ImageRemotePath;
-                var localPosterPath = this.LocalPathForFilename(posterPath);
-                if (localPosterPath != string.Empty && !File.Exists(localPosterPath))
-                {
-                    await this.DownloadImage(posterPath, localPosterPath, new CancellationToken());
-                }
-                mInfo.ImageLocalPath = localPosterPath;
-            }
-        }
     }
 }
