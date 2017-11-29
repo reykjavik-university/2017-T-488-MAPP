@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Foundation;
+using HelloWorld.iOS.Views;
 using UIKit;
 
 namespace HelloWorld.iOS.Controllers
@@ -19,12 +20,15 @@ namespace HelloWorld.iOS.Controllers
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
-            var cell = tableView.DequeueReusableCell((NSString) this.NameListCellId);
+            var cell = (PersonCell)tableView.DequeueReusableCell((NSString) this.NameListCellId);
             if (cell == null)
             {
-                cell = new UITableViewCell(UITableViewCellStyle.Default, this.NameListCellId);
+                cell = new PersonCell(this.NameListCellId);
             }
-            cell.TextLabel.Text = this._personList[indexPath.Row];
+
+            var person = this._personList[indexPath.Row];
+            cell.UpdateCell(person.Name, person.BirthYear.ToString(), person.ImageName);
+            
             return cell;
         }
 

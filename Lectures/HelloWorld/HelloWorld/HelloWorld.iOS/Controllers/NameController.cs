@@ -65,7 +65,6 @@ namespace HelloWorld.iOS.Controllers
             {
                 nameField.ResignFirstResponder();
                 greetingLabel.Text = "Hello " + nameField.Text;
-                this._nameList.Add(nameField.Text);
             };
             return greetingButton;
         }

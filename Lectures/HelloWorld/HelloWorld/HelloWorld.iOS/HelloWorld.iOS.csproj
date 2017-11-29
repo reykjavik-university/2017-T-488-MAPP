@@ -132,6 +132,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Controllers\NameListController.cs" />
     <Compile Include="Controllers\NameListDataSource.cs" />
+    <Compile Include="Views\PersonCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default%402x.png" />
