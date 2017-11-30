@@ -127,12 +127,15 @@
     <None Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\PersonCollectionController.cs" />
+    <Compile Include="Controllers\PersonCollectionDataSource.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\TabBarController.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Controllers\PersonListController.cs" />
     <Compile Include="Controllers\PersonListDataSource.cs" />
+    <Compile Include="Views\PersonCollectionCell.cs" />
     <Compile Include="Views\PersonCell.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -25,7 +25,7 @@ namespace HelloWorld.iOS.Views
             this._label = new UILabel()
             {
                 Frame = new CGRect(0, this.ContentView.Bounds.Height - 20, this.ContentView.Bounds.Width, 20),
-                Font = UIFont.FromName("AmericanTypewrite", 10f),
+                Font = UIFont.FromName("AmericanTypewriter", 10f),
                 TextColor = UIColor.Red,
                 TextAlignment = UITextAlignment.Left,
                 BackgroundColor = UIColor.White

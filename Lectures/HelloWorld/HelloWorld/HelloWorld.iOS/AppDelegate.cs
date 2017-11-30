@@ -1,4 +1,5 @@
-﻿using Foundation;
+﻿using System.Drawing;
+using Foundation;
 using UIKit;
 using HelloWorld;
 using HelloWorld.iOS.Controllers;
@@ -27,15 +28,28 @@ namespace HelloWorld.iOS
             var personController = new PersonController(people.Persons);
 		    var personNavigationController = new UINavigationController(personController);
 
+            var personCollectionController = new PersonCollectionController(CreateFlowLayout(), people.Persons);
+            var personCollectionNavigationController = new UINavigationController(personCollectionController);
+
 		    var tabBarController = new TabBarController()
 		    {
-		        ViewControllers = new UIViewController[] {personNavigationController}
+		        ViewControllers = new UIViewController[] { personNavigationController, personCollectionNavigationController}
 		    };
             
 		    this.Window.RootViewController = tabBarController;
             this.Window.MakeKeyAndVisible();
             return true;
 		}
+
+	    private static UICollectionViewFlowLayout CreateFlowLayout()
+	    {
+	        return new UICollectionViewFlowLayout()
+	        {
+	            MinimumInteritemSpacing = 5,
+	            MinimumLineSpacing = 5,
+	            ItemSize = new SizeF(80, 80)
+	        };
+	    }
 
 		public override void OnResignActivation (UIApplication application)
 		{
