@@ -22,9 +22,17 @@ namespace HelloWorld.iOS
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
             this.Window = new UIWindow(UIScreen.MainScreen.Bounds);
+
 		    var people = new People();
-            var controller = new PersonController(people.Persons);
-		    this.Window.RootViewController = new UINavigationController(controller);
+            var personController = new PersonController(people.Persons);
+		    var personNavigationController = new UINavigationController(personController);
+
+		    var tabBarController = new TabBarController()
+		    {
+		        ViewControllers = new UIViewController[] {personNavigationController}
+		    };
+            
+		    this.Window.RootViewController = tabBarController;
             this.Window.MakeKeyAndVisible();
             return true;
 		}

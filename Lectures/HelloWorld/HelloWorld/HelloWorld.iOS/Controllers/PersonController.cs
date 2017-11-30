@@ -16,6 +16,7 @@ namespace HelloWorld.iOS.Controllers
         public PersonController(List<Person> personList)
         {
             this._personList = personList;
+            this.TabBarItem = new UITabBarItem(UITabBarSystemItem.Search, 0);
         }
 
         public override void ViewDidLoad()
