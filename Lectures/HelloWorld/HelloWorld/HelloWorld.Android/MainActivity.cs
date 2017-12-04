@@ -6,14 +6,13 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Views.InputMethods;
 
 namespace HelloWorld.Droid
 {
 	[Activity (Label = "HelloWorld.Android", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
-		int count = 1;
-
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
@@ -23,12 +22,17 @@ namespace HelloWorld.Droid
 
 			// Get our button from the layout resource,
 			// and attach an event to it
-			//Button button = FindViewById<Button> (Resource.Id.myButton);
-			
-			//button.Click += delegate {
-			//	button.Text = string.Format ("{0} clicks!", count++);
-			//};
-		}
+		    var nameEditText = this.FindViewById<EditText>(Resource.Id.nameEditText);
+		    var greetingButton = this.FindViewById<Button> (Resource.Id.greetingButton);
+		    var greetingTextView = this.FindViewById<TextView>(Resource.Id.greetingTextView);
+
+		    greetingButton.Click += (object sender, EventArgs e) =>
+		    {
+		        var manager = (InputMethodManager)this.GetSystemService(InputMethodService);
+		        manager.HideSoftInputFromWindow(nameEditText.WindowToken, 0);
+		        greetingTextView.Text = "Hello " + nameEditText.Text;
+		    };
+        }
 	}
 }
 
