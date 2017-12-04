@@ -10,7 +10,7 @@ using Android.Views.InputMethods;
 
 namespace HelloWorld.Droid
 {
-	[Activity (Label = "HelloWorld", Theme="@style/MyTheme", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "HelloWorld", Theme="@style/MyTheme")]
 	public class MainActivity : Activity
 	{
 		protected override void OnCreate (Bundle bundle)
