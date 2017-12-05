@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Linq;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
@@ -13,6 +13,8 @@ namespace HelloWorld.Droid
 	[Activity (Label = "HelloWorld", Theme="@style/MyTheme")]
 	public class MainActivity : Activity
 	{
+	    public static People People { get; set; }
+
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
@@ -25,14 +27,28 @@ namespace HelloWorld.Droid
 		    var nameEditText = this.FindViewById<EditText>(Resource.Id.nameEditText);
 		    var greetingButton = this.FindViewById<Button> (Resource.Id.greetingButton);
 		    var greetingTextView = this.FindViewById<TextView>(Resource.Id.greetingTextView);
+		    var nameListButton = this.FindViewById<Button>(Resource.Id.nameListButton);
 
 		    greetingButton.Click += (object sender, EventArgs e) =>
 		    {
 		        var manager = (InputMethodManager)this.GetSystemService(InputMethodService);
 		        manager.HideSoftInputFromWindow(nameEditText.WindowToken, 0);
 		        greetingTextView.Text = "Hello " + nameEditText.Text;
+                People.Persons.Add(new Person()
+                {
+                    Name = nameEditText.Text
+                });
 		    };
-        }
+
+		    nameListButton.Click += (sender, args) =>
+		    {
+		        var intent = new Intent(this, typeof(NameListActivity));
+		        var names = People.Persons.Select(p => p.Name).ToList();
+		        intent.PutStringArrayListExtra("nameList", names);
+                this.StartActivity(intent);
+		    };
+
+		}
 	}
 }
 

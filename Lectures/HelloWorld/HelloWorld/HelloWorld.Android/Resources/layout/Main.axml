@@ -32,4 +32,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/greetingTextView"
         android:layout_marginTop="20dp" />
+    <Button
+        android:text="See name list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameListButton"
+        android:textAllCaps="false"
+        android:layout_marginTop="20dp" />
 </LinearLayout>

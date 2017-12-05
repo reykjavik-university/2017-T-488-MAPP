@@ -12,18 +12,17 @@ using Android.Widget;
 
 namespace HelloWorld.Droid
 {
-    [Activity(Label = "HelloWorld", Theme="@style/MyTheme.Splash", MainLauncher = true, Icon = "@drawable/icon")]
-    public class SplashActivity : Activity
+    [Activity(Label = "Name list", Theme = "@style/MyTheme")]
+    public class NameListActivity : ListActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your application here
-            MainActivity.People = new People();
 
-            this.StartActivity(typeof(MainActivity));
-            this.Finish();
+            var nameList = this.Intent.Extras.GetStringArrayList("nameList") ?? new string[0];
+            this.ListAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, nameList);
         }
     }
 }
