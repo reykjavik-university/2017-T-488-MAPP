@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Android.Views.InputMethods;
+using Newtonsoft.Json;
 
 namespace HelloWorld.Droid
 {
@@ -43,8 +44,7 @@ namespace HelloWorld.Droid
 		    nameListButton.Click += (sender, args) =>
 		    {
 		        var intent = new Intent(this, typeof(NameListActivity));
-		        var names = People.Persons.Select(p => p.Name).ToList();
-		        intent.PutStringArrayListExtra("nameList", names);
+		        intent.PutExtra("personList", JsonConvert.SerializeObject(People.Persons));
                 this.StartActivity(intent);
 		    };
 
