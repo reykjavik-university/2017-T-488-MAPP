@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+        <TextView
+            android:text="Enter you name:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/promptTextView"
+            android:textSize="18dp"
+            android:layout_marginTop="20dp" />
+        <EditText
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nameEditText"
+            android:hint="Your name"
+            android:layout_marginTop="20dp" />
+        <Button
+            android:text="Greet me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/greetingButton"
+            android:textAllCaps="false"
+            android:layout_marginTop="20dp" />
+        <TextView
+            android:text="Hello"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/greetingTextView"
+            android:layout_marginTop="20dp" />
+        <Button
+            android:text="See name list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nameListButton"
+            android:textAllCaps="false"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
+</RelativeLayout>
