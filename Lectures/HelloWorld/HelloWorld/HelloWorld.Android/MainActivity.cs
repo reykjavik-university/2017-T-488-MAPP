@@ -23,6 +23,10 @@ namespace HelloWorld.Droid
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 
+		    var toolbar = this.FindViewById<Toolbar>(Resource.Id.toolbar);
+            this.SetActionBar(toolbar);
+		    this.ActionBar.Title = "My Toolbar";
+
 			// Get our button from the layout resource,
 			// and attach an event to it
 		    var nameEditText = this.FindViewById<EditText>(Resource.Id.nameEditText);
