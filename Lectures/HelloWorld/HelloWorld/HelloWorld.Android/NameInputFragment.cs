@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Android.Views.InputMethods;
 using Newtonsoft.Json;
+using Fragment = Android.Support.V4.App.Fragment;
 
 namespace HelloWorld.Droid
 {
