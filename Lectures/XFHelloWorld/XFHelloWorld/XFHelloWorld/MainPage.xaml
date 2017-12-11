@@ -4,10 +4,16 @@
              xmlns:local="clr-namespace:XFHelloWorld"
              x:Class="XFHelloWorld.MainPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="20,40,20,20"
+                     VerticalOptions="Start"
+                     Spacing="10">
+            <Label Text="Enter you name:"
+                HorizontalOptions="Start" />
+            <Entry Placeholder="Name"/>
+            <Button Text="Greet me" 
+                    BorderColor="Color.Gray"/>
+            <Label Text="Hello"
+                   FontSize="Large"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
