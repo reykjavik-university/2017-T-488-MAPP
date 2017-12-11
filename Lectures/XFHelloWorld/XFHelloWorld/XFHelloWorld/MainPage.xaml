@@ -9,10 +9,14 @@
                      Spacing="10">
             <Label Text="Enter you name:"
                 HorizontalOptions="Start" />
-            <Entry Placeholder="Name"/>
-            <Button Text="Greet me" 
-                    BorderColor="Color.Gray"/>
-            <Label Text="Hello"
+            <Entry x:Name="NameEntry"
+                   Placeholder="Name"/>
+            <Button x:Name="GreetingButton"
+                    Text="Greet me" 
+                    BorderColor="Color.Gray"
+                    Clicked="GreetingButton_OnClicked"/>
+            <Label x:Name="GreetingLabel"
+                   Text="Hello"
                    FontSize="Large"/>
         </StackLayout>
     </ContentPage.Content>

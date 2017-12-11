@@ -13,5 +13,10 @@ namespace XFHelloWorld
         {
             InitializeComponent();
         }
+
+        private void GreetingButton_OnClicked(object sender, EventArgs e)
+        {
+            this.GreetingLabel.Text = "Hello " + this.NameEntry.Text;
+        }
     }
 }
