@@ -7,7 +7,8 @@
         <ListView x:Name="ListView"
                   HasUnevenRows="True"
                   ItemsSource="{Binding Persons}"
-                  SeparatorColor="#DDDDDD">
+                  SeparatorColor="#DDDDDD"
+                  SelectedItem="{Binding SelectedPerson}">
             <ListView.RowHeight>
                 <OnPlatform x:TypeArguments="x:Int32">
                     <On Platform="iOS">60</On>

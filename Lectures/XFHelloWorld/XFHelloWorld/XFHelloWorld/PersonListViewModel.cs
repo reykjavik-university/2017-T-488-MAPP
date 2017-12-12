@@ -13,19 +13,28 @@ namespace XFHelloWorld
     public class PersonListViewModel : INotifyPropertyChanged
     {
         private INavigation _navigation;
-        private List<Person> _personList;
+        private Person _selectedPerson;
 
         public PersonListViewModel(INavigation navigation, List<Person> personList)
         {
             this._navigation = navigation;
-            this._personList = personList;
+            this.Persons = personList;
         }
 
-        public List<Person> Persons
+        public List<Person> Persons { get; set; }
+
+        public Person SelectedPerson
         {
-            get => this._personList;
-            set => this._personList = value;
-        } 
+            get => this._selectedPerson;
+
+            set {
+                if (value != null)
+                {
+                    this._selectedPerson = value;
+                    this._navigation.PushAsync(new PersonPage(this._selectedPerson), true);
+                } 
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
