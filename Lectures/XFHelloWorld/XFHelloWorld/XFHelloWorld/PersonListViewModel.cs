@@ -14,14 +14,24 @@ namespace XFHelloWorld
     {
         private INavigation _navigation;
         private Person _selectedPerson;
+        private List<Person> _personList;
 
         public PersonListViewModel(INavigation navigation, List<Person> personList)
         {
             this._navigation = navigation;
-            this.Persons = personList;
+            this._personList = personList;
         }
 
-        public List<Person> Persons { get; set; }
+        public List<Person> Persons
+        {
+            get => this._personList;
+
+            set
+            {
+                this._personList = value; 
+                OnPropertyChanged();
+            }
+        }
 
         public Person SelectedPerson
         {
