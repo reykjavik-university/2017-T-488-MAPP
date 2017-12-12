@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using XFHelloWorld.Model;
 
 namespace XFHelloWorld
 {
@@ -13,7 +14,7 @@ namespace XFHelloWorld
         {
             InitializeComponent();
 
-            MainPage = new XFHelloWorld.MainPage();
+            MainPage = new NavigationPage(new MainPage(new People()));
         }
 
         protected override void OnStart()

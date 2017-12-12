@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:XFHelloWorld"
-             x:Class="XFHelloWorld.MainPage">
+             x:Class="XFHelloWorld.MainPage"
+             Title="Greetings">
     <ContentPage.Content>
         <StackLayout Margin="20,40,20,20"
                      VerticalOptions="Start"
@@ -18,6 +19,10 @@
             <Label x:Name="GreetingLabel"
                    Text="Hello"
                    FontSize="Large"/>
+            <Button x:Name="PersonListButton"
+                    Text="See person"
+                    BorderColor="Color.Gray"
+                    Clicked="PersonListButton_OnClicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
