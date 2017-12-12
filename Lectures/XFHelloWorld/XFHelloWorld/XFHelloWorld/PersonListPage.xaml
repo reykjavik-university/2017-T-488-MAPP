@@ -7,6 +7,13 @@
         <ListView x:Name="ListView"
                   HasUnevenRows="True"
                   ItemsSource="{Binding Persons}">
+            <ListView.RowHeight>
+                <OnPlatform x:TypeArguments="x:Int32">
+                    <On Platform="iOS">60</On>
+                    <On Platform="Android">60</On>
+                    <On Platform="UWP">100</On>
+                </OnPlatform>
+            </ListView.RowHeight>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
