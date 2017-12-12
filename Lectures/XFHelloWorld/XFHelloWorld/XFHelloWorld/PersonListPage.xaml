@@ -8,7 +8,9 @@
                   ItemsSource="{Binding Persons}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Name}" />
+                    <ImageCell ImageSource="{Binding ImageSource}"
+                               Text="{Binding Name}"
+                               Detail="{Binding BirthYear}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
