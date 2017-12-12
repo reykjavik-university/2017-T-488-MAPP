@@ -15,7 +15,7 @@ namespace XFHelloWorld
     {
         public PersonListPage(People people)
         {
-            this.BindingContext = people;
+            this.BindingContext = new PersonListViewModel(this.Navigation, people.Persons);
             InitializeComponent();
         }
     }
