@@ -18,6 +18,11 @@ namespace XFHelloWorld.Pages
         {
             this.BindingContext = new PersonListViewModel(this.Navigation, people.Persons);
             InitializeComponent();
+
+            if (Device.RuntimePlatform == Device.UWP)
+            {
+                this.ListView.BackgroundColor = Color.Aqua;
+            }
         }
     }
 }
