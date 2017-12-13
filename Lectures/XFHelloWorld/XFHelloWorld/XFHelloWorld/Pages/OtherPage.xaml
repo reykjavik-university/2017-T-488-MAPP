@@ -6,8 +6,15 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand" >
+                <Label.VerticalOptions>
+                    <OnPlatform x:TypeArguments="LayoutOptions">
+                        <On Platform="iOS">Start</On>
+                        <On Platform="Android">Start</On>
+                        <On Platform="UWP">CenterAndExpand</On>
+                    </OnPlatform>
+                </Label.VerticalOptions>
+            </Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
