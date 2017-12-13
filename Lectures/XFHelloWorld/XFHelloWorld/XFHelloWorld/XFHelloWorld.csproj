@@ -35,29 +35,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="App.xaml.cs">
+    <Compile Include="Pages\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\People.cs" />
     <Compile Include="Model\Person.cs" />
-    <Compile Include="PersonListPage.xaml.cs">
+    <Compile Include="Pages\PersonListPage.xaml.cs">
       <DependentUpon>PersonListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PersonListViewModel.cs" />
-    <Compile Include="PersonPage.xaml.cs">
+    <Compile Include="ViewModels\PersonListViewModel.cs" />
+    <Compile Include="Pages\PersonPage.xaml.cs">
       <DependentUpon>PersonPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainPage.xaml">
+    <EmbeddedResource Include="Pages\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="App.xaml">
+    <EmbeddedResource Include="Pages\App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -94,13 +94,13 @@
     <EmbeddedResource Include="Images\winston_churchill.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="PersonListPage.xaml">
+    <EmbeddedResource Include="Pages\PersonListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="PersonPage.xaml">
+    <EmbeddedResource Include="Pages\PersonPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

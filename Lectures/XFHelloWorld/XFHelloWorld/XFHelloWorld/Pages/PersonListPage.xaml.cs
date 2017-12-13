@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XFHelloWorld.Model;
+using XFHelloWorld.ViewModels;
 
-namespace XFHelloWorld
+namespace XFHelloWorld.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PersonPage : ContentPage
+    public partial class PersonListPage : ContentPage
     {
-        public PersonPage(Person person)
+        public PersonListPage(People people)
         {
-            this.BindingContext = person;
+            this.BindingContext = new PersonListViewModel(this.Navigation, people.Persons);
             InitializeComponent();
         }
     }

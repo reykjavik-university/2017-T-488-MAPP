@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using XFHelloWorld.Model;
 
-namespace XFHelloWorld
+namespace XFHelloWorld.Pages
 {
     public partial class MainPage : ContentPage
     {

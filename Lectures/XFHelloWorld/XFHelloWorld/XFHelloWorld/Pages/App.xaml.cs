@@ -6,7 +6,7 @@ using System.Text;
 using Xamarin.Forms;
 using XFHelloWorld.Model;
 
-namespace XFHelloWorld
+namespace XFHelloWorld.Pages
 {
     public partial class App : Application
     {

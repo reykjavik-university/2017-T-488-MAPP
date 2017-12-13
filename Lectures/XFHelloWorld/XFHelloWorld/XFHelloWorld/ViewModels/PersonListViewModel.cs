@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using XFHelloWorld.Model;
+using XFHelloWorld.Pages;
 
-namespace XFHelloWorld
+namespace XFHelloWorld.ViewModels
 {
     public class PersonListViewModel : INotifyPropertyChanged
     {
