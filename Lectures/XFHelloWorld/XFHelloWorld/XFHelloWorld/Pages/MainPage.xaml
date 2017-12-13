@@ -13,16 +13,14 @@
                 HorizontalOptions="Start" />
             <pages:EntryWithBorder x:Name="NameEntry"
                    Placeholder="Name"/>
-            <Button x:Name="GreetingButton"
+            <pages:MyButton x:Name="GreetingButton"
                     Text="Greet me" 
-                    BorderColor="Color.Gray"
                     Clicked="GreetingButton_OnClicked"/>
             <Label x:Name="GreetingLabel"
                    Text="Hello"
                    FontSize="Large"/>
-            <Button x:Name="PersonListButton"
-                    Text="See person"
-                    BorderColor="Color.Gray"
+            <pages:MyButton x:Name="PersonListButton"
+                    Text="See person"  
                     Clicked="PersonListButton_OnClicked"/>
         </StackLayout>
     </ContentPage.Content>
