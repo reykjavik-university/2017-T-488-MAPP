@@ -14,7 +14,19 @@ namespace XFHelloWorld.Pages
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage(new People()));
+            var greetingPage = new MainPage(new People());
+            var greetingNavigationPage = new NavigationPage(greetingPage);
+            greetingNavigationPage.Title = "People";
+
+            var otherPage = new OtherPage();
+            var otherNavigationPage = new NavigationPage(otherPage);
+            otherNavigationPage.Title = "Other";
+
+            var tabbedPage = new TabbedPage();
+            tabbedPage.Children.Add(greetingNavigationPage);
+            tabbedPage.Children.Add(otherNavigationPage);
+
+            MainPage = tabbedPage;
         }
 
         protected override void OnStart()
