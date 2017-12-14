@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XFHelloWorld.ViewModels;
 
 namespace XFHelloWorld.Pages
 {
@@ -14,6 +15,7 @@ namespace XFHelloWorld.Pages
     {
         public OtherPage()
         {
+            this.BindingContext = new OtherViewModel();
             InitializeComponent();
         }
     }

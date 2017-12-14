@@ -53,6 +53,7 @@
     <Compile Include="Pages\PersonListPage.xaml.cs">
       <DependentUpon>PersonListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\OtherViewModel.cs" />
     <Compile Include="ViewModels\PersonListViewModel.cs" />
     <Compile Include="Pages\PersonPage.xaml.cs">
       <DependentUpon>PersonPage.xaml</DependentUpon>

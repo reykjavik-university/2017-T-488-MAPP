@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:XFHelloWorld.Pages;assembly=XFHelloWorld"
              x:Class="XFHelloWorld.Pages.OtherPage"
              Title="Other page">
     <ContentPage.Content>
@@ -15,6 +16,9 @@
                     </OnPlatform>
                 </Label.VerticalOptions>
             </Label>
+            <pages:MyButton Text="Run task" 
+                            Command="{Binding TaskCommand}"/>
+            <Label Text="{Binding TaskText} "/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
